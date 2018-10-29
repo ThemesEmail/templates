@@ -1,0 +1,85 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Header"}} @-->
+<!--@vars {
+"var logo_height":"Email Logo Image Height",
+"var logo_width":"Email Logo Image Width",
+"var template_styles|raw":"Template CSS"
+} @-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>themes.email</title>
+        <style type="text/css">
+            @media only screen and (max-width: 480px) {
+                .logo {
+                    height: auto !important;
+                    max-width: 80% !important;
+                }
+            }
+
+            @media only screen and (max-width: 480px) {
+                .bodyCopy, .tourCopy {
+                    height: auto !important;
+                    max-width: 90% !important;
+                    font-size: 13px !important;
+                }
+            }
+        {{var template_styles|raw}}
+
+        {{css file="css/email.css"}}
+        </style>
+    </head>
+    <body style="font-family: Helvetica, Sans Serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; background: #FFFFFF; Margin: 0; padding: 0;">
+       {{inlinecss file="css/email-inline.css"}}
+       
+        <table class="bg-fw-blue" border="0" cellpadding="0" cellspacing="0" width="100%"
+               style="mso-line-height-rule: exactly; mso-table-lspace: 0; mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #4fc6dc;">
+            <tbody>
+                <tr>
+                    <td align="center" class="logoContainer" style="mso-line-height-rule: exactly; mso-table-lspace: 0; mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 25px 0 0;">  
+                        <a href="{{store url=""}}" style="-webkit-appearance: none; -moz-appearance: none; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+                            <img
+                                {{if logo_width}}
+                                    width="{{var logo_width}}"
+                                {{else}}
+                                    width="330"
+                                {{/if}}
+
+                                {{if logo_height}}
+                                    height="{{var logo_height}}"
+                                {{else}}
+                                    height="135"
+                                {{/if}}
+
+                                src="{{var logo_url}}"
+                                alt="{{var logo_alt}}"
+                                border="0"
+                                class="logo"
+                                style="-ms-interpolation-mode: bicubic; display: block; max-width: 330px; padding: 25px 0;"
+                            />
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Content -->
+        <table class="bg-lightest-grey" border="0" cellpadding="0" cellspacing="0" width="100%"
+               style="mso-line-height-rule: exactly; mso-table-lspace: 0; mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #FAFAFA;">
+            <tbody>
+                <tr>
+                    <td align="center" style="mso-line-height-rule: exactly; mso-table-lspace: 0; mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 0px 0px 40px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td id="emailcontent" align="center" style="mso-line-height-rule: exactly; mso-table-lspace: 0; mso-table-rspace: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                        <div id="hs_cos_wrapper_feature-copy" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text"
+                             style="color: inherit; font-size: inherit; line-height: inherit;">
+                            <div class="bodyCopy" style="color: #7f7f7f; font-size: 13px; text-align:left; line-height: 24px; max-width: 600px; margin: 0 0 1em;">
+
+                                <!--  Here Goes Content: Start  -->

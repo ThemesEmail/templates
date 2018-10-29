@@ -1,0 +1,171 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Header"}} @-->
+<!--@vars {
+"var logo_height":"Email Logo Image Height",
+"var logo_width":"Email Logo Image Width",
+"var template_styles|raw":"Template CSS"
+} @-->
+
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>themes.email</title>
+        <style type="text/css">
+            /* RESET */
+            p{margin:10px 0; padding:0;}
+            table{border-collapse:collapse;}
+            h1, h2, h3, h4, h5, h6{display:block; margin:0; padding:0;}
+            img, a img{border:0; height:auto; outline:none; text-decoration:none;}
+            body, #bodyTable, #bodyCell{height:100%; margin:0; padding:0; width:100%;}
+
+            /* CLIENT SPECIFIC */
+            img{-ms-interpolation-mode:bicubic;}
+            table{mso-table-lspace:0pt; mso-table-rspace:0pt;}
+            .ReadMsgBody{width:100%;} .ExternalClass{width:100%;}
+            p, a, li, td, blockquote{mso-line-height-rule:exactly;} 
+            a[href^="tel"], a[href^="sms"]{color:inherit; cursor:default; text-decoration:none;}
+            p, a, li, td, body, table, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;}
+            .ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font{line-height:100%;}
+            a[x-apple-data-detectors]{color:inherit !important; text-decoration:none !important; font-size:inherit !important; font-family:inherit !important; font-weight:inherit !important; line-height:inherit !important;}
+            #footerContent a{color:#B7B7B7 !important;}
+
+            /* MOBILE */
+            @media only screen and (max-width:480px){
+                body{width:100% !important; min-width:100% !important;} 
+                h1{font-size:24px !important;}
+                #templateHeader{padding-right:20px !important; padding-left:20px !important;}
+                #headerContainer{padding-right:0 !important; padding-left:0 !important;}
+                #headerTable{border-top-left-radius:0 !important; border-top-right-radius:0 !important;}
+                #headerTable td{padding-top:30px !important;}
+                #bodyContainer{padding-right:20px !important; padding-left:20px !important;}
+                #bodyContent{padding-right:0 !important;}
+                #footerContent p{border-bottom:1px solid #E5E5E5; font-size:11px !important; padding-bottom:40px !important; line-height:13px !important;}
+                .utilityLink{border-bottom:1px solid #E5E5E5; display:block; font-size:13px !important; padding-top:10px; padding-bottom:10px; text-decoration:none !important;}
+                .mobileHide{display:none; visibility:hidden;}
+            }
+
+            @media screen{
+                *, td{font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;}
+            }
+        {{var template_styles|raw}}
+
+        {{css file="css/email.css"}}
+        </style>
+    </head>
+    <body>
+       {{inlinecss file="css/email-inline.css"}}
+       
+        <center>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+                <tbody>
+                    <tr>
+                        <td align="center" valign="top" id="bodyCell">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td align="center" bgcolor="#00b8ff" valign="top" id="templateHeader" style="background-color:#00b8ff; padding-right:30px; padding-left:30px;">
+                                            <!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="400">
+<tr>
+<td align="center" valign="top" width="400">
+<![endif]-->
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:400px;" class="emailContainer">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="center" valign="top" id="logoContainer" style="padding-top:30px; padding-bottom:30px;">
+                                                            <img
+                                                                {{if logo_width}}
+                                                                    width="{{var logo_width}}"
+                                                                {{else}}
+                                                                    width="40"
+                                                                {{/if}}
+
+                                                                {{if logo_height}}
+                                                                    height="{{var logo_height}}"
+                                                                {{else}}
+                                                                    height="40"
+                                                                {{/if}}
+
+                                                                src="{{var logo_url}}"
+                                                                alt="{{var logo_alt}}"
+                                                                border="0"
+                                                                style="color:#FFFFFF; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px; font-weight:400; letter-spacing:-1px; padding:0; margin:0; text-align:center;"
+                                                            />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--[if gte mso 9]>
+</td>
+</tr>
+</table>
+<![endif]-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" bgcolor="#00b8ff" valign="top" id="headerContainer" style="background-color:#00b8ff; padding-right:30px; padding-left:30px;">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="center" valign="top">
+                                                            <!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="640">
+<tr>
+<td align="center" valign="top" width="640">
+<![endif]-->
+                                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:640px;" class="emailContainer">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center" valign="top">
+                                                                            <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="100%" id="headerTable" style="background-color:#FFFFFF; border-collapse:separate; border-top-left-radius:5px; border-top-right-radius:5px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td align="center" valign="top" width="100%" style="padding-top:40px; padding-bottom:0;">&nbsp;</td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <!--[if gte mso 9]>
+</td>
+</tr>
+</table>
+<![endif]-->
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" valign="top" id="templateBody">
+                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                <tbody>
+                                                    <tr>
+                                                        <td align="center" valign="top">
+                                                            <!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="700">
+<tr>
+<td align="center" valign="top" width="700">
+<![endif]-->
+                                                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:700px;" class="emailContainer">
+                                                                <tbody>
+                                                                    <tr>
+
+                                                                        <td valign="top" width="100%" style="padding-right:70px; padding-left:70px; padding-bottom:20px" id="bodyContainer">
+                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td id="emailcontent" align="left" valign="top" style="color:#737373; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:13px; font-weight:400; line-height:16px; padding:10px; margin:0; text-align:left;">
+
+                                                                                            <!-- Here Goes Content: Start -->

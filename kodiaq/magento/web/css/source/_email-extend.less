@@ -1,0 +1,429 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Email extend styles
+//  _____________________________________________
+
+//  This file should be used for theme-specific styles for emails that extend or modify the styles in _email.less
+//  This will allow you to edit email styles without copying and editing the _email.less file
+
+//  Importing fonts from an external CSS file, rather than embedding @font-face declarations inside the <style> tag,
+//  as the latter will cause font rendering issues if the web fonts are inaccessible.
+
+//  @import url("@{baseUrl}css/email-fonts.css");
+
+// Version control: 25101000
+
+
+
+//
+//  Email Content
+//  _____________________________________________
+
+#emailcontent {
+    table {
+        width: 100%;
+    }
+}
+
+//
+//  Sales Module Styles
+//  _____________________________________________
+
+.email-summary {
+    td {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 10px;
+
+        h1 {
+            margin-bottom: 4px;
+            padding-bottom: 0;
+            border-bottom: 0;
+            color: @text-highlight__color;
+            font-weight: bold;
+        }
+
+        h3{
+            font-weight:300;
+
+            span {
+                font-weight: bold;
+                color: @text-highlight__color;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    //  Shrink order number in order email so it will fit on single line on small screens / XS for 480px 
+    .email-summary {
+        h1 {
+            font-size: ceil(1.7 * @font-size__base) !important; // 24px
+            color: @text-highlight__color;
+        }
+    }
+    //  Each on new line on small screens
+    .email-items {
+        text-align: center;
+        
+        tbody {
+            > tr {
+                > td {
+                    display: block;
+                    width: 100% !important;
+                }
+
+                > .item-thumbnail {
+                    
+                    > img {
+                        margin: 0 auto;
+                        width: 300px;
+                    }   
+                }
+
+                > .item-info {
+                    border-top: 0px !important;
+                    text-align: center;
+
+                    > .product-name {
+
+                    }   
+                }
+
+                > .item-price {
+                    border-top: 0px !important;
+                    text-align: center !important;
+                    
+                    > .price {
+                        
+                    }   
+                }
+            }
+        }
+        
+        tfoot {
+            > tr {
+                > th,
+                > td {
+                    display: block;
+                    width: auto !important;
+                    text-align: center !important;
+                }
+                > th {
+                    padding: 9px !important;
+                    padding-bottom: 0px !important;
+                }
+                > td {
+                    padding: 9px !important;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Order Summary
+//  ----------------------------------------------
+
+.order-details {
+    width: 100%;
+    // background-color: @table__bg-color;
+    // border: @table__border-width @table__border-style @table__border-color;
+
+    tr {
+        > .address-details,
+        > .method-info {
+            width: 50%;
+            line-height: 1.3;
+
+            h3 {
+                margin-top: 0;
+                color: @text-highlight__color;
+                font-weight: bold;
+                font-size: 14px;
+
+            }
+        }
+
+        //  Prevent extra spacing on Payment & Shipping Method row
+        & + .method-info {
+            > td {
+                padding: 0 0 @email-content__padding__base;
+            }
+        }
+    }
+
+    .payment-method {
+        margin-bottom: @indent__s;
+
+        .title {
+            font-weight: @font-weight__regular;
+        }
+
+        .data.table {
+            > caption {
+                display: none;
+            }
+
+            th {
+                padding-right: @email-content__padding__base;
+            }
+        }
+    }
+}
+
+//  Remove address and phone number link color on iOS
+.address-details a {
+    &:extend(.no-link a);
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    //  Stack columns
+    .order-details {
+        .address-details,
+        .method-info {
+            display: block;
+            padding: @email-content__padding__base !important;
+            width: auto !important;
+
+            h3 {
+                color: @text-highlight__color;
+                margin-bottom: @indent__xs !important;
+                margin-top: 0 !important;
+            }
+        }
+    }
+}
+
+//
+//  Shipment Tracking
+//  ----------------------------------------------
+
+.shipment-track {
+    .lib-table(@table__width, 0);
+
+    thead,
+    tbody {
+        > tr {
+            > th,
+            > td {
+                background-color: @table__bg-color !important;
+                padding: @email-content__padding__base;
+                width: 50%;
+            }
+
+            & + tr {
+                th,
+                td {
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Items Table
+//  ----------------------------------------------
+
+.email-items {
+    .lib-table(@table__width, 0);
+    border: 0 !important;
+    margin-bottom: 30px;
+
+    thead {
+        > tr {
+            > th,
+            > td {
+                background-color: none !important;
+                font-size: 11px;
+                font-weight: 300;
+                text-transform: uppercase;
+            }
+            > th.item-subtotal {
+                text-align: right !important;
+            }
+        }
+    }
+
+    tbody {
+        > tr {
+
+            > th {
+                padding: @email-content__padding__base;
+            }
+
+            > td {
+                padding: @email-content__padding__base;
+                border-top: @table__border-width @table__border-style @table__border-color;
+
+                &.message-gift {
+                    border-top: none;
+                    padding-top: 0;
+                }
+            }
+
+            > .item-thumbnail {
+                width: 135px;
+
+                img {
+
+                }
+            }
+
+            > .item-info {
+                vertical-align: middle;
+
+                > .product-name {
+                    color: @text-highlight__color;
+                    font-size: 15px;
+                    font-weight: @font-weight__bold;
+                    margin-bottom: @email-content__padding__s;
+                    line-height: 1.2;
+                }
+                > .sku {
+                    font-size: 12px;
+                    line-height: 1.3;
+                    margin: 0;
+                }
+
+                > .has-extra .sku {
+                    margin-bottom: @email-content__padding__base;
+                }
+
+                > .item-options,
+                > dl {
+                    padding-left: 0px;
+                    font-size: 12px;
+                    line-height: 1.3;
+                    margin: 0;
+                    > dt {  
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                        text-align: left;
+                        display: inline;
+                        strong {
+                            font-weight: normal;
+                            em {
+                                font-style: normal;
+                            }
+                        }
+                    }
+                    > dd {
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                        padding-left: 0px;
+                        text-align: left;
+                        display: inline;
+                    }
+                }
+
+                > .qty {
+                    font-size: 12px;
+                    line-height: 1.3;
+                    margin: 0;
+                }
+            }
+
+            > .item-qty {
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            > .item-extra {
+                padding-top: 0;
+            }
+
+            > .item-price {
+                color: @text-highlight__color;
+                text-align: right;
+                font-size: 15px;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    tfoot {
+        border-top: @table__border-width @table__border-style @table__border-color;
+        color: @text-highlight__color;
+        font-size: 14px;
+        line-height: 1.1;
+
+        > tr {
+            > th,
+            > td {
+                background-color: @table__bg-color !important;
+                border-top: 0px !important;
+                padding: 5px;
+            }
+            > td {
+                padding-right: 20px;
+            }
+
+            & + tr {
+                > th,
+                > td {
+                    border-top: 0;
+                }
+            }
+        }
+        > tr.subtotal {
+            > th,
+            > td {
+                padding-top: 20px; // add padding to first row at tfoot //
+            }
+        }
+        > tr.grand_total {
+            > th,
+            > td {
+                // totals
+                font-size: 18px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+
+    //
+    //  Order Totals
+    //  ---------------------------------------------- 
+    .order-totals {
+        > tr {
+            > th {
+                font-weight: @font-weight__regular;
+            }
+
+            > th,
+            > td {
+                padding: @email-content__padding__base;
+                text-align: right;
+            }
+
+            & + tr {
+                th,
+                td {
+                    padding-top: 0;
+                }
+            }
+        }
+
+        .price {
+            white-space: nowrap;
+        }
+    }
+}
+
+.email-non-inline() {
+    .email-items {
+        .lib-table-overflow();
+    }
+}

@@ -1,0 +1,143 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Header"}} @-->
+<!--@vars {
+"var logo_height":"Email Logo Image Height",
+"var logo_width":"Email Logo Image Width",
+"var template_styles|raw":"Template CSS"
+} @-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="-webkit-text-size-adjust: none;">
+
+    <head style="-webkit-text-size-adjust: none;">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" style="-webkit-text-size-adjust: none;">
+        <title style="-webkit-text-size-adjust: none;">Themes.email</title>
+        <style type="text/css" style="-webkit-text-size-adjust: none;">
+            *{
+                -webkit-text-size-adjust:none;
+            }
+            .subhead{
+                font-size:11px !important;
+            }
+            h1 { font-size: 32px; line-height: 1.2;}
+            h2 {font-size: 30px; line-height: 1.2;}
+            h3 {font-size: 28px; line-height: 1.1;}
+            h4 {font-size: 26px; line-height: 1.1;}
+            h5 {font-size: 24px; line-height: 1.1;}
+            h6 {font-size: 22px; line-height: 1.1;}
+
+            @media screen and (max-width: 479px){
+                .subhead .extra{
+                    display:none !important;
+                }
+
+            }	@media screen and (max-width: 479px){
+                .sale-list{
+                    font-size:10px;
+                }
+
+            }	@media screen and (min-width: 480px){
+                .social img{
+                    width:19px !important;
+                    padding:5px 7px !important;
+                }
+
+            }	@media screen and (min-width: 480px){
+                .social img.pinterest{
+                    width:21px !important;
+                }
+
+            }	@media screen and (min-width: 480px){
+                .app-link{
+                    width:185px !important;
+                }
+
+            }
+        {{var template_styles|raw}}
+
+        {{css file="css/email.css"}}
+        </style>
+    </head>
+
+    <body style="margin: 0;padding: 0;background: #f8f8f8;-webkit-text-size-adjust: none;">
+        {{inlinecss file="css/email-inline.css"}}
+       
+        <table width="100%" style="min-width: 300px;max-width: 600px;background: #fff;font-family: 'helvetica neue',helvetica,arial,sans-serif;font-weight: 200;letter-spacing: 1px;line-height: 1.6em;color: #4d4d4d;font-size: 13px;border-collapse: collapse;-webkit-text-size-adjust: none;"
+               class="wrapper" align="center">
+            <tr style="background-color: #728ee4;-webkit-text-size-adjust: none;">
+                <td style="-webkit-text-size-adjust: none; padding: 15px 0;">
+                    <table width="96%" style="max-width: 600px;padding: 8px 0;table-layout: fixed;-webkit-text-size-adjust: none;"
+                           align="center">
+                        <tr style="-webkit-text-size-adjust: none;">
+                            <td align="left" style="-webkit-text-size-adjust: none;"> <span style="font-size: 0;line-height: 0;display: none;visibility: hidden;-webkit-text-size-adjust: none;">Discover and buy amazing templates.</span>                            
+                                <a class="logo" href="{{store url=""}}" style="color: #fff;font-weight: 500;text-decoration: none;display: inline-block;margin-left: 10px;-webkit-text-size-adjust: none;">
+                                    <img
+                                        {{if logo_width}}
+                                            width="{{var logo_width}}"
+                                        {{else}}
+                                            width="100"
+                                        {{/if}}
+
+                                        {{if logo_height}}
+                                            height="{{var logo_height}}"
+                                        {{else}}
+                                            height="35"
+                                        {{/if}}
+
+                                        src="{{var logo_url}}"
+                                        alt="{{var logo_alt}}"
+                                        border="0"
+                                        class="logo"
+                                        style="display: block;width: 100px;-webkit-text-size-adjust: none;"
+                                    />
+                                </a>    
+                            </td>
+                            <td align="right" style="-webkit-text-size-adjust: none; vertical-align: middle;">
+                                <img src="https://s3.amazonaws.com/templates.themes.email/zala/first.png"
+                                     style="width: 118px;margin-right: 10px;-webkit-text-size-adjust: none;">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr style="background: #fff;border-bottom: 2px solid #f2f2f2;-webkit-text-size-adjust: none;">
+                <td style="-webkit-text-size-adjust: none;">
+                    <table width="96%" style="max-width: 600px;text-align: center;font-size: 10px;-webkit-text-size-adjust: none;"
+                           class="subhead" align="center">
+                        <tr style="-webkit-text-size-adjust: none;">
+                            <td style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/magento.html" style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">Magento</a>
+                            </td>
+                            <td style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/prestashop.html" style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">Prestashop</a>
+                            </td>
+                            <td style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/woocommerce.html" style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">Woocommerce</a>
+                            </td>
+                            <td class="extra" style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/"
+                                   style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">Wordpress</a>
+                            </td>
+                            <td style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/" style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">EDD</a>
+                            </td>
+                            <td class="extra" style="-webkit-text-size-adjust: none;">
+                                <a href="https://themes.email/" style="text-decoration: none;color: #58595b;white-space: nowrap;display: block;padding: 2px 5px;-webkit-text-size-adjust: none;">Joomla!</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr style="-webkit-text-size-adjust: none;">
+                <td style="-webkit-text-size-adjust: none;">
+                    <table width="100%" align="center" cellspacing="0" style="max-width: 580px;padding: 0 10px;table-layout: fixed;-webkit-text-size-adjust: none;">
+                        <tr style="-webkit-text-size-adjust: none;">
+                            <td id="emailcontent" style="padding-top: 20px; padding-bottom:20px; -webkit-text-size-adjust: none; font-size: 13px;">
+
+                                <!--  Here Goes Content: Start  -->

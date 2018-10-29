@@ -1,0 +1,469 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Header"}} @-->
+<!--@vars {
+"var logo_height":"Email Logo Image Height",
+"var logo_width":"Email Logo Image Width",
+"var template_styles|raw":"Template CSS"
+} @-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <head>
+        <!-- NAME: 1 COLUMN -->
+        <!--[if gte mso 15]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>themes.email</title>
+        <style type="text/css">
+            p{
+                margin:10px 0;
+                padding:0;
+            }
+            table{
+                border-collapse:collapse;
+            }
+            h1,h2,h3,h4,h5,h6{
+                display:block;
+                margin:0;
+                padding:0;
+            }
+            img,a img{
+                border:0;
+                height:auto;
+                outline:none;
+                text-decoration:none;
+            }
+            body,#bodyTable,#bodyCell{
+                height:100%;
+                margin:0;
+                padding:0;
+                width:100%;
+            }
+            #outlook a{
+                padding:0;
+            }
+            img{
+                -ms-interpolation-mode:bicubic;
+            }
+            table{
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            }
+            .ReadMsgBody{
+                width:100%;
+            }
+            .ExternalClass{
+                width:100%;
+            }
+            p,a,li,td,blockquote{
+                mso-line-height-rule:exactly;
+            }
+            a[href^=tel],a[href^=sms]{
+                color:inherit;
+                cursor:default;
+                text-decoration:none;
+            }
+            p,a,li,td,body,table,blockquote{
+                -ms-text-size-adjust:100%;
+                -webkit-text-size-adjust:100%;
+            }
+            .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+                line-height:100%;
+            }
+            a[x-apple-data-detectors]{
+                color:inherit !important;
+                text-decoration:none !important;
+                font-size:inherit !important;
+                font-family:inherit !important;
+                font-weight:inherit !important;
+                line-height:inherit !important;
+            }
+            #bodyCell{
+                padding:10px;
+            }
+            .templateContainer{
+                max-width:600px !important;
+            }
+            a.Button{
+                display:block;
+            }
+            .Image{
+                vertical-align:bottom;
+            }
+            .TextContent{
+                word-break:break-word;
+            }
+            .TextContent img{
+                height:auto !important;
+            }
+            .DividerBlock{
+                table-layout:fixed !important;
+            }
+            body,#bodyTable{
+                background-color:#ededed;
+            }
+            #bodyCell{
+                border-top:0;
+            }
+            .templateContainer{
+                border:0;
+            }
+            h1{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:36px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            h2{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:22px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            h3{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:20px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            h4{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:18px;
+                font-style:normal;
+                font-weight:bold;
+                line-height:125%;
+                letter-spacing:normal;
+                text-align:left;
+            }
+            #templatePreheader{
+                background-color:#ffffff;
+                border-top:0;
+                border-bottom:0;
+                padding-top:0px;
+                padding-bottom:0px;
+            }
+            #templatePreheader .TextContent,#templatePreheader .TextContent p{
+                color:#656565;
+                font-family:Helvetica;
+                font-size:12px;
+                line-height:150%;
+                text-align:left;
+            }
+            #templatePreheader .TextContent a,#templatePreheader .TextContent p a{
+                color:#656565;
+                font-weight:normal;
+                text-decoration:underline;
+            }
+            #templateHeader{
+                background-color:#ffffff;
+                border-top:0;
+                border-bottom:0;
+                padding-top:0px;
+                padding-bottom:0;
+            }
+            #templateHeader .TextContent,#templateHeader .TextContent p{
+                color:#202020;
+                font-family:Helvetica;
+                font-size:13px;
+                line-height:150%;
+                text-align:left;
+            }
+            #templateHeader .TextContent a,#templateHeader .TextContent p a{
+                color:#2BAADF;
+                font-weight:normal;
+                text-decoration:underline;
+            }
+            #templateBody{
+                background-color:#FFFFFF;
+                border-top:0;
+                border-bottom:2px solid #EAEAEA;
+                padding-top:0;
+                padding-bottom:9px;
+            }
+            #templateBody .TextContent,#templateBody .TextContent p{
+                color:#222222;
+                font-family:Helvetica;
+                font-size:13px;
+                line-height:150%;
+                text-align:left;
+            }
+            #templateBody .TextContent a,#templateBody .TextContent p a{
+                color:#222222;
+                font-weight:normal;
+                text-decoration:underline;
+            }
+            #templateFooter{
+                background-color:#ededed;
+                border-top:0;
+                border-bottom:0;
+                padding-top:9px;
+                padding-bottom:9px;
+            }
+            #templateFooter .TextContent,#templateFooter .TextContent p{
+                color:#656565;
+                font-family:Helvetica;
+                font-size:12px;
+                line-height:150%;
+                text-align:center;
+            }
+            #templateFooter .TextContent a,#templateFooter .TextContent p a{
+                color:#656565;
+                font-weight:bold;
+                text-decoration:none;
+            }
+            @media only screen and (min-width:768px){
+                .templateContainer{
+                    width:600px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                body,table,td,p,a,li,blockquote{
+                    -webkit-text-size-adjust:none !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                body{
+                    width:100% !important;
+                    min-width:100% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #bodyCell{
+                    padding-top:10px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .Image{
+                    width:100% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .CaptionTopContent,.CaptionBottomContent,.TextContentContainer,.BoxedTextContentContainer,.ImageGroupContentContainer,.CaptionLeftTextContentContainer,.CaptionRightTextContentContainer,.CaptionLeftImageContentContainer,.CaptionRightImageContentContainer,.ImageCardLeftTextContentContainer,.ImageCardRightTextContentContainer{
+                    max-width:100% !important;
+                    width:100% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .BoxedTextContentContainer{
+                    min-width:100% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageGroupContent{
+                    padding:9px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .CaptionLeftContentOuter .TextContent,.CaptionRightContentOuter .TextContent{
+                    padding-top:9px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageCardTopImageContent,.CaptionBlockInner .CaptionTopContent:last-child .TextContent{
+                    padding-top:18px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageCardBottomImageContent{
+                    padding-bottom:9px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageGroupBlockInner{
+                    padding-top:0 !important;
+                    padding-bottom:0 !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageGroupBlockOuter{
+                    padding-top:9px !important;
+                    padding-bottom:9px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .TextContent,.BoxedTextContentColumn{
+                    padding-right:18px !important;
+                    padding-left:18px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .ImageCardLeftImageContent,.ImageCardRightImageContent{
+                    padding-right:18px !important;
+                    padding-bottom:0 !important;
+                    padding-left:18px !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .mcpreview-image-uploader{
+                    display:none !important;
+                    width:100% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                h1{
+                    font-size:26px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                h2{
+                    font-size:20px !important;
+                    line-height:125% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                h3{
+                    font-size:18px !important;
+                    line-height:125% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                h4{
+                    font-size:13px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                .BoxedTextContentContainer .TextContent,.BoxedTextContentContainer .TextContent p{
+                    font-size:14px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #templatePreheader{
+                    display:block !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #templatePreheader .TextContent,#templatePreheader .TextContent p{
+                    font-size:14px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #templateHeader .TextContent,#templateHeader .TextContent p{
+                    font-size:13px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #templateBody .TextContent,#templateBody .TextContent p{
+                    font-size:13px !important;
+                    line-height:150% !important;
+                }
+
+            }	@media only screen and (max-width: 480px){
+                #templateFooter .TextContent,#templateFooter .TextContent p{
+                    font-size:14px !important;
+                    line-height:150% !important;
+                }
+
+            }
+        {{var template_styles|raw}}
+
+        {{css file="css/email.css"}}
+        </style>
+    </head>
+
+    <body style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ededed;">
+       {{inlinecss file="css/email-inline.css"}}
+       
+        <center>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;background-color: #ededed;">
+                <tr>
+                    <td align="center" valign="top" id="bodyCell" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 10px;width: 100%;border-top: 0;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <!--[if gte mso 9]>
+<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+<tr>
+<td align="center" valign="top" width="600" style="width:600px;">
+<![endif]-->
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border: 0;max-width: 600px !important;">
+                            <tr>
+                                <td valign="top" id="templatePreheader" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0px;"></td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateHeader" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;border-top: 0;border-bottom: 0;padding-top: 0px;padding-bottom: 0;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="CodeBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                        <tbody class="TextBlockOuter">
+                                            <tr>
+                                                <td valign="top" class="TextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr>
+                                                <td class="mobile-hide mobile-no-padding text-padding-left" width="450" height="110" align="left" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;padding-left: 58px;mso-line-height-rule: exactly; vertical-align: middle;">
+                                                    <a class="logo" href="{{store url=""}}" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #000000;mso-line-height-rule: exactly;">
+                                                        <img
+                                                            {{if logo_width}}
+                                                                width="{{var logo_width}}"
+                                                            {{else}}
+                                                                width="108"
+                                                            {{/if}}
+
+                                                            {{if logo_height}}
+                                                                height="{{var logo_height}}"
+                                                            {{else}}
+                                                                height="20"
+                                                            {{/if}}
+
+                                                            src="{{var logo_url}}"
+                                                            alt="{{var logo_alt}}"
+                                                            border="0"
+                                                            style="padding-top: 3px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;"
+                                                        />
+                                                    </a>
+                                                    
+                                                </td>
+                                                <td class="mobile-no-padding text-padding-right" height="110" width="180" align="right" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;mso-table-lspace: 0pt;mso-table-rspace: 0pt;padding-right: 58px;mso-line-height-rule: exactly; vertical-align: middle;">
+                                                    <a href="https://themes.email/" target="_blank" style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;color: #000000;mso-line-height-rule: exactly;">
+                                                        <img alt="Themes.email" width="26" height="20" border="0" src="https://s3.amazonaws.com/templates.themes.email/cube/icon.png" style="padding-top: 3px;-ms-interpolation-mode: bicubic;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" id="templateBody" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 2px solid #EAEAEA;padding-top: 0;padding-bottom: 9px;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="TextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                        <tbody class="TextBlockOuter">
+                                            <tr>
+                                                <td valign="top" class="TextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="TextContentContainer">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign="top" class="TextContent" style="padding: 9px 18px;text-align: left;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #222222;font-family: Helvetica;font-size: 13px;line-height: 150%;">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" max-width="564" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td id="emailcontent" style="padding-left: 7%;padding-right: 7%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                                                                    <!--  Here Goes Content: Start  -->

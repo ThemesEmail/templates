@@ -1,0 +1,88 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Header"}} @-->
+<!--@vars {
+"var logo_height":"Email Logo Image Height",
+"var logo_width":"Email Logo Image Width",
+"var template_styles|raw":"Template CSS"
+} @-->
+
+<!DOCTYPE html>
+<html bgcolor="#F7F8F8" style="background-color:#F7F8F8">
+
+    <head>
+        <title>Themes.email</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta content="width=device-width" name="viewport" />
+        <style type="text/css">
+            p:first-of-type {margin-top:0 !important}
+            p:last-of-type {margin-bottom:0 !important}
+            a.btn:hover {background-color:#F7F8F8 !important}
+            table#footer td a:link {color:#7B858B !important;font-weight:bold !important;text-decoration:none !important;font-size:12px !important}
+            table#footer td a:visited {color:#7B858B !important;font-weight:bold !important;text-decoration:none !important;font-size:12px !important}
+            table#footer td a:hover {color:#7B858B !important;font-weight:bold !important;text-decoration:none !important;font-size:12px !important}
+            table#footer td a:active {color:#7B858B !important;font-weight:bold !important;text-decoration:none !important;font-size:12px !important}
+            table#footer td a:hover {text-decoration:underline !important}
+            table#footer td a:active {text-decoration:underline !important}
+            h1 { font-size: 32px; line-height: 1.2;}
+            h2 {font-size: 30px; line-height: 1.2;}
+            h3 {font-size: 28px; line-height: 1.1;}
+            h4 {font-size: 26px; line-height: 1.1;}
+            h5 {font-size: 24px; line-height: 1.1;}
+            h6 {font-size: 22px; line-height: 1.1;}
+            p {font-size: 13px; line-height: 1.4;}
+            
+            @media only screen and (max-width:600px)  {
+                table[class~="container"] { width: 100% !important; }
+            }
+            
+            {{var template_styles|raw}}
+
+            {{css file="css/email.css"}}
+        </style>
+    </head>
+
+    <body bgcolor="#F7F8F8" height="100% !important" style='-webkit-font-smoothing:antialiased; -webkit-text-size-adjust:none; width:100% !important; height:100% !important; font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; background-color:#F7F8F8' width="100% !important">
+        {{inlinecss file="css/email-inline.css"}}
+       
+        <table cellpadding="0" cellspacing="0" class="container" id="container" style="margin:0 auto; width:600px" width="600">
+            <tr>
+                <td class="outer" style="vertical-align:top; padding:64px 10px">
+                    <table cellpadding="0" cellspacing="0" class="container" id="header" style="margin:0 auto; width:600px" width="600">
+                        <tr>
+                            <td align="center" bgcolor="#1D2C36" style="vertical-align:top; background-color:#1D2C36; text-align:center; padding:50px; border-top-left-radius:3px; border-top-right-radius:3px">
+                                <a class="logo" href="{{store url=""}}" target="_blank">
+                                    <img
+                                        {{if logo_width}}
+                                            width="{{var logo_width}}"
+                                        {{else}}
+                                            width="70"
+                                        {{/if}}
+
+                                        {{if logo_height}}
+                                            height="{{var logo_height}}"
+                                        {{else}}
+                                            height="50"
+                                        {{/if}}
+
+                                        src="{{var logo_url}}"
+                                        alt="{{var logo_alt}}"
+                                        border="0"
+                                        style="max-width:100%"
+                                    />
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                    <table cellpadding="0" cellspacing="0" class="container" id="body" style="margin:0 auto; width:600px" width="600">
+                        <tr>
+                            <td bgcolor="#fff" class="body" style="vertical-align:top; padding:50px 64px; border-left:1px solid #E6E8E9; border-right:1px solid #E6E8E9; border-bottom:1px solid #E6E8E9; background-color:#fff; border-bottom-left-radius:3px; border-bottom-right-radius:3px">
+                                <table cellpadding="0" cellspacing="0" id="body-inner" style="width: 100%;" width="100%">
+                                    <tr>
+                                        <td id="emailcontent" class="intro-copy" style="vertical-align:top; padding-bottom:30px; font-size: 13px;">
+
+                                            <!--  Here Goes Content: Start  -->
